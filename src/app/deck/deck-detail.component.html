@@ -1,0 +1,109 @@
+<mat-accordion class="example-headers-align" multi>
+  <mat-expansion-panel expanded>
+    <mat-expansion-panel-header>
+      <mat-panel-title> Creatures </mat-panel-title>
+      <mat-panel-description>
+        {{ deckCards | filterDeckCategoryAmount: "Creature" }} Cards
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <div class="deck-category">
+      <app-card
+        [card]="card.card"
+        [amount]="card.amount"
+        [isInDeck]="true"
+        (newRemoveEventEmitter)="onRemove($event)"
+        *ngFor="let card of deckCards | filterDeckCategory: 'Creature'"
+      ></app-card>
+    </div>
+  </mat-expansion-panel>
+  <mat-expansion-panel expanded>
+    <mat-expansion-panel-header>
+      <mat-panel-title> Sorceries </mat-panel-title>
+      <mat-panel-description>
+        {{ deckCards | filterDeckCategoryAmount: "Sorcery" }} Cards
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <div class="deck-category">
+      <app-card
+        [card]="card.card"
+        [amount]="card.amount"
+        [isInDeck]="true"
+        (newRemoveEventEmitter)="onRemove($event)"
+        *ngFor="let card of deckCards | filterDeckCategory: 'Sorcery'"
+      ></app-card>
+    </div>
+  </mat-expansion-panel>
+  <mat-expansion-panel expanded>
+    <mat-expansion-panel-header>
+      <mat-panel-title> Instants </mat-panel-title>
+      <mat-panel-description>
+        {{ deckCards | filterDeckCategoryAmount: "Instant" }} Cards
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <div class="deck-category">
+      <app-card
+        [card]="card.card"
+        [amount]="card.amount"
+        [isInDeck]="true"
+        (newRemoveEventEmitter)="onRemove($event)"
+        *ngFor="let card of deckCards | filterDeckCategory: 'Instant'"
+      ></app-card>
+    </div>
+  </mat-expansion-panel>
+  <mat-expansion-panel expanded>
+    <mat-expansion-panel-header>
+      <mat-panel-title> Artifacts </mat-panel-title>
+      <mat-panel-description>
+        {{ deckCards | filterDeckCategoryAmount: "Artifact" }} Cards
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <div class="deck-category">
+      <app-card
+        [card]="card.card"
+        [amount]="card.amount"
+        [isInDeck]="true"
+        (newRemoveEventEmitter)="onRemove($event)"
+        *ngFor="let card of deckCards | filterDeckCategory: 'Artifact'"
+      ></app-card>
+    </div>
+  </mat-expansion-panel>
+  <mat-expansion-panel expanded>
+    <mat-expansion-panel-header>
+      <mat-panel-title> Enchantments </mat-panel-title>
+      <mat-panel-description>
+        {{ deckCards | filterDeckCategoryAmount: "Enchantment" }} Cards
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <div class="deck-category">
+      <app-card
+        [card]="card.card"
+        [amount]="card.amount"
+        [isInDeck]="true"
+        (newRemoveEventEmitter)="onRemove($event)"
+        *ngFor="let card of deckCards | filterDeckCategory: 'Enchantment'"
+      ></app-card>
+    </div>
+  </mat-expansion-panel>
+  <mat-expansion-panel expanded>
+    <mat-expansion-panel-header>
+      <mat-panel-title> Lands </mat-panel-title>
+      <mat-panel-description>
+        {{ deckCards | filterDeckCategoryAmount: "Land" }} Cards
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <div class="deck-category">
+      <app-card
+        [card]="card.card"
+        [amount]="card.amount"
+        [isInDeck]="true"
+        (newRemoveEventEmitter)="onRemove($event)"
+        *ngFor="let card of deckCards | filterDeckCategory: 'Land'"
+      ></app-card>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>
+
+<app-floating-button
+  buttonIcon="add"
+  (newClickEventEmitter)="openDialog()"
+></app-floating-button>

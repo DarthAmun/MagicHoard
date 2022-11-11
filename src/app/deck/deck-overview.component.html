@@ -1,0 +1,35 @@
+<div class="cards" *ngFor="let deck of decks">
+  <mat-card class="deck-card">
+    <mat-card-header>
+      <div
+        *ngIf="deck.image_uri"
+        mat-card-avatar
+        class="card-header-image"
+        [ngStyle]="{ 'background-image': 'url(' + deck.image_uri + ')' }"
+      ></div>
+      <mat-card-title>{{ deck.name }}</mat-card-title>
+      <mat-card-subtitle
+        >Format: {{ deck.format | formatToString }}</mat-card-subtitle
+      >
+    </mat-card-header>
+    <mat-card-content>
+      <p>Placeholder</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button *ngIf="deck.id" (click)="onEdit(deck.id)">EDIT</button>
+      <button
+        mat-button
+        color="warn"
+        *ngIf="deck.id"
+        (click)="onDelete(deck.id)"
+      >
+        DELETE
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<app-floating-button
+  buttonIcon="add"
+  (newClickEventEmitter)="onAddDeck()"
+></app-floating-button>

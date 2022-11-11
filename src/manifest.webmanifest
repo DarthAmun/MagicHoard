@@ -1,6 +1,6 @@
 {
-  "name": "MtgTome",
-  "short_name": "MtgTome",
+  "name": "MagicHoarder",
+  "short_name": "MagicHoarder",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",

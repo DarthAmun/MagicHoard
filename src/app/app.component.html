@@ -1,19 +1,13 @@
+<div class="wrapper">
+  <mat-toolbar>
+    <span>Magic Hoarder</span>
+    <span class="example-spacer"></span>
+    <a mat-button routerLink="/decks">Decks</a>
+    <a mat-button routerLink="/collection">Collection</a>
+    <span class="example-spacer"></span>
 
-<mat-drawer-container class="example-container" autosize>
-  <mat-drawer #drawer class="example-sidenav" mode="side">
-    <p>Auto-resizing sidenav</p>
-    <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
-    <button (click)="showFiller = !showFiller" mat-raised-button>
-      Toggle extra text
-    </button>
-  </mat-drawer>
+    <a mat-button routerLink="/settings"><mat-icon>settings</mat-icon></a>
+  </mat-toolbar>
 
-  <div class="example-sidenav-content">
-    <button type="button" mat-button (click)="drawer.toggle()">
-      Toggle sidenav
-    </button>
-  </div>
-
-</mat-drawer-container>
-
-<router-outlet></router-outlet>
+  <router-outlet></router-outlet>
+</div>

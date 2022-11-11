@@ -1,0 +1,48 @@
+<div class="deck-card">
+  <button
+    mat-icon-button
+    class="card-menu-button"
+    [matMenuTriggerFor]="menu"
+    aria-label="Example icon-button with a menu"
+  >
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button *ngIf="!isInDeck" mat-menu-item (click)="onAdd()">
+      <mat-icon>add</mat-icon>
+      <span>Add</span>
+    </button>
+    <button *ngIf="isInDeck" mat-menu-item disabled>
+      <mat-icon>dialpad</mat-icon>
+      <span>Make Commander</span>
+    </button>
+    <button *ngIf="isInDeck" mat-menu-item disabled>
+      <mat-icon>dialpad</mat-icon>
+      <span>Move to Considering</span>
+    </button>
+    <button *ngIf="isInDeck" mat-menu-item disabled>
+      <mat-icon>voicemail</mat-icon>
+      <span>Move to Sideboard</span>
+    </button>
+    <button *ngIf="isInDeck" mat-menu-item (click)="onRemove()">
+      <mat-icon>remove</mat-icon>
+      <span>Remove</span>
+    </button>
+  </mat-menu>
+
+  <mat-chip-list *ngIf="isInDeck" class="card-amount-chip">
+    <mat-chip (removed)="onRemove()">
+      x{{amount}}
+      <button matChipRemove class="card-amount-remove">
+        <mat-icon>cancel</mat-icon>
+      </button>
+    </mat-chip>
+  </mat-chip-list>
+
+  <img
+    class="card-image"
+    mat-card-image
+    [src]="[card.image_uri]"
+    alt="Photo of a Shiba Inu"
+  />
+</div>

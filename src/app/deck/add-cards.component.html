@@ -1,0 +1,41 @@
+<h2 mat-dialog-title>Add new Cards</h2>
+<mat-dialog-content class="mat-typography">
+  <mat-tab-group mat-align-tabs="center">
+    <mat-tab label="Add by Search"
+      ><mat-form-field class="deck-full-width" appearance="fill">
+        <mat-label>Search Cards to add</mat-label>
+        <input matInput type="text" [(ngModel)]="searchValue" />
+        <button
+          matSuffix
+          mat-icon-button
+          aria-label="Search"
+          (click)="onSearch()"
+        >
+          <mat-icon>search</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <div class="cards-found">
+        <app-card
+          [card]="card"
+          [isInDeck]="false"
+          (newAddEventEmitter)="onAdd($event)"
+          *ngFor="let card of foundCards"
+        ></app-card></div
+    ></mat-tab>
+    <mat-tab label="Add by Text">
+      <mat-form-field class="deck-full-width" appearance="fill">
+        <mat-label>Deck</mat-label>
+        <textarea
+          matInput
+          placeholder="1 Mana Drain ..."
+          [(ngModel)]="importText"
+        ></textarea>
+        <mat-hint align="start"><strong>One card per row</strong> </mat-hint>
+      </mat-form-field>
+      <button mat-icon-button aria-label="Import" (click)="onImport()">
+        <mat-icon>publish</mat-icon>
+      </button>
+    </mat-tab>
+  </mat-tab-group>
+</mat-dialog-content>

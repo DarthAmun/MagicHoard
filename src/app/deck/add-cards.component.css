@@ -1,0 +1,10 @@
+.cards-found {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.deck-full-width {
+    width: 100%;
+}
